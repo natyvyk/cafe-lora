@@ -19,7 +19,7 @@ document.querySelector('#root').innerHTML = render(
 
       <main className="order">
         <div className="container order__content">
-          <h1>Vaše objedávnka</h1>
+          <h1>Vaše objednávka</h1>
           <p className="empty-order">Zatím nemáte nic objednáno</p>
           <div className="order__items">
             <div className="order-item">
