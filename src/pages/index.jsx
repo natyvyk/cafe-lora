@@ -20,3 +20,28 @@ document.querySelector('#root').innerHTML = render(
     < Footer />
   </div>
 );
+
+/*
+const navToggle = document.querySelector('.nav-btn');
+const mobileNav = document.querySelector('.rollout-nav');
+
+navToggle.addEventListener('click', () => {
+mobileNav.classList.toggle('nav-closed');
+});
+
+mobileNav.addEventListener('click', () => {
+mobileNav.classList.add('nav-closed');
+})
+*/
+
+const hamburgerMenuButton = document.querySelector(".nav-btn");
+const navigaceElm = document.querySelector(".rollout-nav");
+
+
+hamburgerMenuButton.addEventListener("click", () => {
+  navigaceElm.classList.toggle("nav-closed")
+});
+
+navigaceElm.addEventListener("click", () => {
+  navigaceElm.classList.add("nav-closed")
+});

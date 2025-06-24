@@ -1,11 +1,11 @@
 import "./style.css"
 
 export const Header = () => (
-        <header>
+        <header id="home">
             <div className="header__content container">
                 <div className="site-logo"></div>
 
-                 <div className="navigation">
+                <div className="navigation">
                     <button className="nav-btn"></button>
                     <nav className="rollout-nav nav-closed">
                         <a href="#home">domů</a>
