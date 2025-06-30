@@ -8,12 +8,18 @@ import { Gallery } from '../components/Gallery';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 
+const response = await fetch("http://localhost:4000/api/drinks");
+const json = await response.json();
+console.log(json);
+const data = json.data;
+console.log(data);
+
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <Header />
     <main>
       <Banner />
-      <Menu />
+      <Menu drinks={data} />
       <Gallery />
       <Contact />
     </main>
@@ -21,22 +27,10 @@ document.querySelector('#root').innerHTML = render(
   </div>
 );
 
-/*
-const navToggle = document.querySelector('.nav-btn');
-const mobileNav = document.querySelector('.rollout-nav');
 
-navToggle.addEventListener('click', () => {
-mobileNav.classList.toggle('nav-closed');
-});
-
-mobileNav.addEventListener('click', () => {
-mobileNav.classList.add('nav-closed');
-})
-*/
-
+//Zprovozneni navigace
 const hamburgerMenuButton = document.querySelector(".nav-btn");
 const navigaceElm = document.querySelector(".rollout-nav");
-
 
 hamburgerMenuButton.addEventListener("click", () => {
   navigaceElm.classList.toggle("nav-closed")
@@ -45,3 +39,4 @@ hamburgerMenuButton.addEventListener("click", () => {
 navigaceElm.addEventListener("click", () => {
   navigaceElm.classList.add("nav-closed")
 });
+

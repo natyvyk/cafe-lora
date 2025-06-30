@@ -1,7 +1,7 @@
 import "./style.css";
 import { Drink } from "../Drink";
 
-export const Menu = () => (
+export const Menu = ({drinks}) => (
     <section id="menu" className="menu">
     <div className="container">
       <h2>Naše nabídka</h2>
@@ -9,8 +9,9 @@ export const Menu = () => (
         Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
       </p>
       <div className="drinks-list">
-        <Drink name="Espresso" image="https://baristaroyal.de/cdn/shop/articles/caffe-doppio-152331.jpg?v=1719300694&width=1500"/>
-
+        {drinks.map((drink) => 
+            <Drink key={drink.id} name={drink.name} image={`http://localhost:4000${drink.image}`} layers={drink.layers} />
+          )}
       </div>
 
       <div className="order-detail">
