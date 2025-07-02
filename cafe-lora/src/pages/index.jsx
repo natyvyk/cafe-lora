@@ -40,3 +40,30 @@ navigaceElm.addEventListener("click", () => {
   navigaceElm.classList.add("nav-closed")
 });
 
+
+//Event listener
+const formsElm = document.querySelectorAll(".drink__controls");
+
+formsElm.forEach((form) => 
+  form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const coffeeId = Number(e.target.dataset.id);
+  const coffeeOrdered = e.target.dataset.ordered;
+  const value = coffeeOrdered === "true" ? false : true;
+
+  const response = await fetch(`http://localhost:4000/api/drinks/${coffeeId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body : JSON.stringify([{ 
+        op: 'replace', 
+        path: '/ordered', 
+        value: value
+      }]
+      ),
+    });
+    
+    window.location.reload();
+  }));
+

@@ -10,7 +10,7 @@ export const Menu = ({drinks}) => (
       </p>
       <div className="drinks-list">
         {drinks.map((drink) => 
-            <Drink key={drink.id} name={drink.name} image={`http://localhost:4000${drink.image}`} layers={drink.layers} />
+            <Drink key={drink.id} id={drink.id} name={drink.name} ordered={drink.ordered} image={`http://localhost:4000${drink.image}`} layers={drink.layers} />
           )}
       </div>
 
