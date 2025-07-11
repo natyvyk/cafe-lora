@@ -20,7 +20,7 @@ export const Drink = ({id, name, ordered, image, layers}) => (
           <form data-id={id} data-ordered={ordered} className="drink__controls">
             <input type="hidden" className="order-id" value="0" />
             <button className={ordered ? "order-btn order-btn--ordered" : "order-btn" } type="submit">
-              {ordered ? "Objednat" : "Zrušit" }
+              {ordered ? "Zrušit" : "Objednat" }
             </button>
           </form>
         </div>
